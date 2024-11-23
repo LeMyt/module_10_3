@@ -26,6 +26,7 @@ class Bank:
             else:
                 print('Запрос отклонён, недостаточно средств')
                 self.lock.acquire()
+            time.sleep(0.001)
 
 bk = Bank()
 th1 = threading.Thread(target=Bank.deposit, args=(bk,))
